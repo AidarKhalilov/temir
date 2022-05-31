@@ -3,9 +3,10 @@ import tabulate
 
 def delete_double_column(x):
     for i in range(len(x[0])):
-        current = x[0][i]
+        current = [x[element][i] for element in range(len(x))]
         for j in range(i + 1, len(x[0])):
-            if x[0][j] == current:
+            buffer = [x[element][j] for element in range(len(x))]
+            if buffer == current:
                 return delete_double_column(delete_column(x, j))
     return x
 
@@ -14,7 +15,6 @@ def delete_column(x, j):
     for i in range(len(x)):
         x[i].pop(j)
     return x
-
 
 def delete_empty_columns(x):
     for i in range(len(x[0])):
@@ -57,11 +57,11 @@ def main(x):
     return x
 
     
-print(main(
+print(tabulate.tabulate(main(
     [
-        [None, '01.11.03', 'Ситов Тимофей', 'false', None, 'timofej64@gmail.com', 'timofej64@gmail.com'],
-        [None, '00.09.17', 'Силберг Кирилл', 'true', None, 'silberg93@yahoo.com', 'silberg93@yahoo.com'],
         [None, None, None, None, None, None, None],
+        [None, '00.09.17', 'Силберг Кирилл', 'true', None, 'silberg93@yahoo.com', 'silberg93@yahoo.com'],
+        [None, '02.03.20', 'Новелак Валерий', 'true', None, 'novelak14@mail.ru', 'novelak14@mail.ru'],
         [None, '02.04.19', 'Мумалин Сергей', 'false', None, 'mumalin92@mail.ru', 'mumalin92@mail.ru']
     ]
-))
+)))
