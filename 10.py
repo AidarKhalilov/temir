@@ -38,7 +38,7 @@ def transform(x):
                 case 0:
                     x[i][j] = '.'.join(x[i][j].split('.')[::-1])
                 case 1:
-                    x[i][j] = ' '.join(x[i][j].split('\n')[::-1])
+                    x[i][j] = ' '.join(x[i][j].split(' ')[::-1])
                 case 2:
                     if x[i][j] == 'false':
                         x[i][j] = 'Не выполнено'
@@ -59,9 +59,9 @@ def main(x):
     
 print(main(
     [
-        [None, '01.11.03', 'Ситов\nТимофей', 'false', None, 'timofej64@gmail.com', 'timofej64@gmail.com'],
-        [None, '00.09.17', 'Силберг\nКирилл', 'true', None, 'silberg93@yahoo.com', 'silberg93@yahoo.com'],
+        [None, '01.11.03', 'Ситов Тимофей', 'false', None, 'timofej64@gmail.com', 'timofej64@gmail.com'],
+        [None, '00.09.17', 'Силберг Кирилл', 'true', None, 'silberg93@yahoo.com', 'silberg93@yahoo.com'],
         [None, None, None, None, None, None, None],
-        [None, '02.04.19', 'Мумалин\nСергей', 'false', None, 'mumalin92@mail.ru', 'mumalin92@mail.ru']
+        [None, '02.04.19', 'Мумалин Сергей', 'false', None, 'mumalin92@mail.ru', 'mumalin92@mail.ru']
     ]
 ))
